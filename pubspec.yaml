@@ -1,6 +1,6 @@
 name: date_picker_lunar_calendar
 description: "This plugin allows to pick date with lunar calendar, solar calendar and can convert from solar date to lunar date."
-version: 0.0.3
+version: 0.0.4
 homepage: https://github.com/nambui2000k/date_picker_lunar_calendar
 
 environment:

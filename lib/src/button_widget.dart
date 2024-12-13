@@ -3,16 +3,41 @@ import 'package:flutter/material.dart';
 
 /// Custom button
 class ButtonCustom extends StatelessWidget {
-  final String title; /// Nội dung bên trong nút
-  final Function onClick; /// Action khi ấn vào nút
-  final Color? bgColor; /// màu nền của nút
-  final Color? textColor; /// Màu chữ trong nút
-  final Color? borderColor; /// Màu viền của nút
-  final double? height; /// Độ cao
-  final double? width; /// Chiều dài
-  final WidgetStateProperty<EdgeInsetsGeometry?>? padding; /// Padding nút
+  final String title;
 
-  const ButtonCustom({super.key, required this.title, required this.onClick, this.bgColor, this.textColor, this.borderColor, this.height, this.width, this.padding});
+  /// Nội dung bên trong nút
+  final Function onClick;
+
+  /// Action khi ấn vào nút
+  final Color? bgColor;
+
+  /// màu nền của nút
+  final Color? textColor;
+
+  /// Màu chữ trong nút
+  final Color? borderColor;
+
+  /// Màu viền của nút
+  final double? height;
+
+  /// Độ cao
+  final double? width;
+
+  /// Chiều dài
+  final WidgetStateProperty<EdgeInsetsGeometry?>? padding;
+
+  /// Padding nút
+
+  const ButtonCustom(
+      {Key? key,
+      required this.title,
+      required this.onClick,
+      this.bgColor,
+      this.textColor,
+      this.borderColor,
+      this.height,
+      this.width,
+      this.padding});
 
   @override
   Widget build(BuildContext context) {
@@ -25,24 +50,31 @@ class ButtonCustom extends StatelessWidget {
           onClick();
         },
         style: ButtonStyle(
-            textStyle: WidgetStateProperty.all<TextStyle>(
-                const TextStyle(fontSize: 16,)),
-            padding: padding??WidgetStateProperty.all(
-                const EdgeInsets.symmetric(horizontal: 8, vertical: 16)),
-            foregroundColor: WidgetStateProperty.all<Color>(textColor??Colors.white),
-            backgroundColor: WidgetStateProperty.all<Color>(bgColor??clrFAD209),
+            textStyle: WidgetStateProperty.all<TextStyle>(const TextStyle(
+              fontSize: 16,
+            )),
+            padding: padding ??
+                WidgetStateProperty.all(
+                    const EdgeInsets.symmetric(horizontal: 8, vertical: 16)),
+            foregroundColor:
+                WidgetStateProperty.all<Color>(textColor ?? Colors.white),
+            backgroundColor:
+                WidgetStateProperty.all<Color>(bgColor ?? clrFAD209),
             shape: WidgetStateProperty.all<RoundedRectangleBorder>(
                 RoundedRectangleBorder(
-                  side:BorderSide(color: borderColor??Colors.transparent),
-                  borderRadius: BorderRadius.circular(16),
-                ))),
+              side: BorderSide(color: borderColor ?? Colors.transparent),
+              borderRadius: BorderRadius.circular(16),
+            ))),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(title,style: TextStyle(
+            Text(
+              title,
+              style: TextStyle(
                 fontSize: 12,
                 fontWeight: FontWeight.w700,
-            ),),
+              ),
+            ),
           ],
         ),
       ),
