@@ -69,7 +69,7 @@ class _HomePageState extends State<HomePage> {
                 });
               }
             },
-            child: Text("Pick date"),
+            child: Text("Chọn ngày"),
           ),
         ],
       ),

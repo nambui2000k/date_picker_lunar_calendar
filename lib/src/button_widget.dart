@@ -1,17 +1,16 @@
 import 'package:date_picker_lunar_calendar/src/style.dart';
 import 'package:flutter/material.dart';
 
-import 'date_picker_lunar_calendar_widget.dart';
-
+/// Custom button
 class ButtonCustom extends StatelessWidget {
-  final String title;
-  final Function onClick;
-  final Color? bgColor;
-  final Color? textColor;
-  final Color? borderColor;
-  final double? height;
-  final double? width;
-  final WidgetStateProperty<EdgeInsetsGeometry?>? padding;
+  final String title; /// Nội dung bên trong nút
+  final Function onClick; /// Action khi ấn vào nút
+  final Color? bgColor; /// màu nền của nút
+  final Color? textColor; /// Màu chữ trong nút
+  final Color? borderColor; /// Màu viền của nút
+  final double? height; /// Độ cao
+  final double? width; /// Chiều dài
+  final WidgetStateProperty<EdgeInsetsGeometry?>? padding; /// Padding nút
 
   const ButtonCustom({super.key, required this.title, required this.onClick, this.bgColor, this.textColor, this.borderColor, this.height, this.width, this.padding});
 

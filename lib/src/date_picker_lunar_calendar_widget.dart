@@ -5,11 +5,12 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:lunar_calendar_converter_new/lunar_solar_converter.dart';
 
+/// Widget hiển thị lịch dương + lịch âm
 class DatePickerLunarCalendarWidget extends StatefulWidget {
-  final DateTime dateSelected;
+  final DateTime dateSelected; /// Ngày được chọn
   final BuildContext contextPopup;
-  final DateTime? endDate;
-  final DateTime? beginDate;
+  final DateTime? endDate; /// Ngày kết thúc
+  final DateTime? beginDate; /// Ngày bắt đầu
   const DatePickerLunarCalendarWidget({super.key, required this.dateSelected, required this.contextPopup, this.endDate, this.beginDate});
 
   @override
@@ -235,6 +236,7 @@ class _DatePickerLunarCalendarWidgetState extends State<DatePickerLunarCalendarW
                 child: ButtonCustom(
                   title: "Đồng ý",
                   onClick: () {
+                    /// Submit sẽ trả về ngày được chọn
                     Navigator.pop(widget.contextPopup,dateSelected);
                   },
                   height: 37,
@@ -248,39 +250,41 @@ class _DatePickerLunarCalendarWidgetState extends State<DatePickerLunarCalendarW
       ),
     );
   }
+  /// Hiển thị thứ
   String getDisplayDayOfWeek(int dow) {
     if(dow == DateTime.monday){
-      return "Mo";
+      return "T2";
     }
     if(dow == DateTime.tuesday){
-      return "Tu";
+      return "T3";
     }
     if(dow == DateTime.wednesday){
-      return "We";
+      return "T4";
     }
     if(dow == DateTime.thursday){
-      return "Th";
+      return "T5";
     }
     if(dow == DateTime.friday){
-      return "Fr";
+      return "T6";
     }
     if(dow == DateTime.saturday){
-      return "Sa";
+      return "T7";
     }
     if(dow == DateTime.sunday){
-      return "Su";
+      return "CN";
     }
     return "";
   }
 
+  /// Lấy danh sách ngày trong tháng
   List<DateTime?> getDaysInMonth(int year, int month) {
-    // Tạo một danh sách để chứa các ngày
+    /// Tạo một danh sách để chứa các ngày
     List<DateTime?> daysInMonth = [];
 
-    // Lấy số ngày trong tháng hiện tại
+    // /Lấy số ngày trong tháng hiện tại
     int daysInMonthCount = DateTime(year, month + 1, 0).day;
 
-    // Thêm từng ngày vào danh sách
+    /// Thêm từng ngày vào danh sách
     for (int day = 1; day <= daysInMonthCount; day++) {
       daysInMonth.add(DateTime(year, month, day));
     }
