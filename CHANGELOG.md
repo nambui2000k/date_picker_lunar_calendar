@@ -1,4 +1,4 @@
-## 0.0.3
+## 0.0.4
 Fix "Pass static analysis"
 
 ## 0.0.3
