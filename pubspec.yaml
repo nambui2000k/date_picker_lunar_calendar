@@ -1,6 +1,6 @@
 name: date_picker_lunar_calendar
 description: "This plugin allows to pick date with lunar calendar, solar calendar and can convert from solar date to lunar date."
-version: 0.0.4
+version: 0.0.5
 homepage: https://github.com/nambui2000k/date_picker_lunar_calendar
 
 environment:
@@ -11,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   plugin_platform_interface: ^2.0.2
-  intl: ^0.20.1
+  intl: ^0.19.0
   lunar_calendar_converter_new: ^2.0.0
 
 dev_dependencies:
