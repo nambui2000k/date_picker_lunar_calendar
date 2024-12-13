@@ -1,4 +1,7 @@
 ## 0.0.3
+Fix "Pass static analysis"
+
+## 0.0.3
 Add convert Lunar to Solar
 
 ## 0.0.2
