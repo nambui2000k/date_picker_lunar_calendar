@@ -15,6 +15,7 @@ class DatePickerLunarCalendarWidget extends StatefulWidget {
 
   /// Ngày kết thúc
   final DateTime? beginDate;
+  final Color? colorTheme;
 
   /// Ngày bắt đầu
   const DatePickerLunarCalendarWidget(
@@ -22,7 +23,8 @@ class DatePickerLunarCalendarWidget extends StatefulWidget {
       required this.dateSelected,
       required this.contextPopup,
       this.endDate,
-      this.beginDate});
+      this.beginDate,
+      this.colorTheme});
 
   @override
   State<DatePickerLunarCalendarWidget> createState() =>
@@ -37,6 +39,7 @@ class _DatePickerLunarCalendarWidgetState
   late int month;
   late int year;
   late DateTime? beginDate;
+  late Color? colorTheme;
 
   @override
   void initState() {
@@ -46,6 +49,7 @@ class _DatePickerLunarCalendarWidgetState
     year = dateSelected.year;
     endDate = widget.endDate;
     beginDate = widget.beginDate;
+    colorTheme = widget.colorTheme ?? Colors.blue;
 
     getDays();
     super.initState();
@@ -108,7 +112,7 @@ class _DatePickerLunarCalendarWidgetState
                     style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w600,
-                        color: Colors.blue),
+                        color: colorTheme),
                   ),
                 ),
               ),
@@ -226,7 +230,7 @@ class _DatePickerLunarCalendarWidgetState
                                       shape: BoxShape.circle,
                                       color: !dateSelected.isAtSameMomentAs(day)
                                           ? Colors.white
-                                          : Colors.blue),
+                                          : colorTheme),
                                   child: Center(
                                     child: Column(
                                       mainAxisAlignment:
@@ -255,7 +259,7 @@ class _DatePickerLunarCalendarWidgetState
                                           return Text(
                                             "${lunarDay.lunarDay}/${lunarDay.lunarMonth}",
                                             style: TextStyle(
-                                                fontSize: 12,
+                                                fontSize: 10,
                                                 color: dateSelected
                                                         .isAtSameMomentAs(day)
                                                     ? Colors.white
@@ -297,8 +301,8 @@ class _DatePickerLunarCalendarWidgetState
                   height: 37,
                   padding: WidgetStateProperty.all(const EdgeInsets.all(0)),
                   bgColor: Colors.white,
-                  borderColor: Colors.blue,
-                  textColor: Colors.blue,
+                  borderColor: colorTheme,
+                  textColor: colorTheme,
                 ),
               ),
               SizedBox(
@@ -313,7 +317,7 @@ class _DatePickerLunarCalendarWidgetState
                   },
                   height: 37,
                   padding: WidgetStateProperty.all(const EdgeInsets.all(0)),
-                  bgColor: Colors.blue,
+                  bgColor: colorTheme,
                 ),
               ),
             ],

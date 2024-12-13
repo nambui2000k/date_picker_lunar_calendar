@@ -8,7 +8,10 @@ export 'src/src.dart';
 class DatePickerLunarCalendar {
   /// Hàm để chọn ngày từ lịch dương, có ngày âm bên dưới
   Future<DateTime?> selectDate(BuildContext context,
-      {DateTime? initDate, DateTime? beginDate, DateTime? endDate}) async {
+      {DateTime? initDate,
+      DateTime? beginDate,
+      DateTime? endDate,
+      Color? colorTheme}) async {
     DateTime? result = await showDialog(
         context: context,
         builder: (contextPopup) => AlertDialog(
@@ -22,6 +25,7 @@ class DatePickerLunarCalendar {
                     contextPopup: contextPopup,
                     endDate: endDate,
                     beginDate: beginDate,
+                    colorTheme: colorTheme,
                   );
                 },
               ),

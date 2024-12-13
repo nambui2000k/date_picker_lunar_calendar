@@ -1,3 +1,6 @@
+## 0.0.6
+Add color theme
+
 ## 0.0.5
 Downgrade intl version
 
