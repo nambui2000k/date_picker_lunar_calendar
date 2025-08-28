@@ -9,7 +9,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 
-import 'package:date_picker_lunar_calendar/date_picker_lunar_calendar.dart';
 
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();

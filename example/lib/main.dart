@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
 
-import 'package:flutter/services.dart';
 import 'package:date_picker_lunar_calendar/date_picker_lunar_calendar.dart';
 
 void main() {
@@ -9,7 +7,7 @@ void main() {
 }
 
 class MyApp extends StatefulWidget {
-  const MyApp({Key? key});
+  const MyApp({super.key});
 
   @override
   State<MyApp> createState() => _MyAppState();
@@ -25,13 +23,13 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(useMaterial3: false),
-      home: HomePage(),
+      home: const HomePage(),
     );
   }
 }
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key});
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -50,7 +48,7 @@ class _HomePageState extends State<HomePage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(width: double.infinity),
-          Text("Ngày dương: ${dateSelected}"),
+          Text("Ngày dương: $dateSelected"),
           Text(
               "Ngày âm: ${dateSelected == null ? "---" : DatePickerLunarCalendar().convertSolarToLunar(dateSelected!)}"),
           TextButton(
@@ -66,7 +64,7 @@ class _HomePageState extends State<HomePage> {
                 setState(() {});
               }
             },
-            child: Text("Chọn ngày"),
+            child: const Text("Chọn ngày"),
           ),
         ],
       ),

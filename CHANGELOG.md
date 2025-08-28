@@ -1,3 +1,6 @@
+## 0.0.7
+Update Dart SDK: 3.9.0
+
 ## 0.0.6
 Add color theme
 
